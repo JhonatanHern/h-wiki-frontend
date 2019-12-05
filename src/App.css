@@ -1,22 +1,70 @@
-.App {
-  text-align: center;
-}
+*{box-sizing: border-box;}
 
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
+body{
+  margin: 0;
+  height: 100%;
   min-height: 100vh;
+  position: relative;
+}
+#root{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100vh;
+  background-color: #000;
 }
-
-.App-link {
-  color: #09d3ac;
+header{
+  padding: .3em;
+  color: white;
+  text-shadow: 3px 3px #a1f;
+  background-color: white;
+  font-weight: bold;
+  font-size: 2.4em;
+  animation: texty 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes texty{
+  from{
+    text-shadow: 2px 2px #a1f;
+  }
+  to{
+    text-shadow: 3px 3px #a1f;
+  }
+}
+main{
+  flex-grow: 1;
+  background-color: #ccc;
+  padding: 1em;
+  white-space: nowrap;
+  overflow-x: auto;
+  position: relative;
+}
+.card{
+  padding: 1em;
+  color:#333;
+  background-color:white;
+  max-width: 40vw;
+  white-space: normal;
+  overflow-y: auto;
+  max-height: calc(100% - 1em);
+  display: inline-block;
+  margin-right: 1em;
+  animation: ffl .4s;
+  animation-timing-function: ease-in-out;
+  box-shadow: #555 10px 10px 10px;
+}
+.card code{
+  max-width: 100%;
+  overflow-x: auto;
+}
+@keyframes ffl {
+  from{
+    opacity: 0;
+    transform: translateX(-30%);
+  }
+  to{
+    opacity: 1;
+    transform: none;
+  }
 }
